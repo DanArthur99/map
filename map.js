@@ -64,6 +64,10 @@ console.log(studentNameIdObject);
 
 
 
+
+/**
+ * add age element using arrow function
+ */
 const addAgeElement = () => {
   let ages = [32, 26, 38];
   let newStudents = students;
@@ -75,3 +79,30 @@ const addAgeElement = () => {
 }
 
 console.log(addAgeElement());
+
+
+
+/**
+ * Adding age element using map()
+ */
+const studentWithAge = students.map(student => {
+  let theAges = [32, 26, 38];
+  const newStudentObject = {};
+
+  newStudentObject.id = student.id;
+  newStudentObject.name = student.name;
+  newStudentObject.profession = student.profession;
+  newStudentObject.skill = student.skill;
+
+  if (student == students[0]) {
+    newStudentObject.age = theAges[0];
+  } else if (student == students[1]) {
+    newStudentObject.age = theAges[1];
+  } else if (student = students[2]) {
+    newStudentObject.age = theAges[2];
+  }
+  
+  return newStudentObject;
+})
+
+console.log(studentWithAge);
